@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- hello vue -->
+    <div id="app1">{{ message }}</div>
+
+    <!-- v-text -->
+    <div id="app2">
+      <span>{{ message }}</span>
+      <span v-text="message"></span>
+    </div>
+
+    <!-- v-for -->
+    <div id="app3">
+      <div v-for="item in items">{{ item.id }}{{ item.text }}</div>
+    </div>
+
+    <!-- v-if（v-else-if、v-else） -->
+    <div id="app4">
+      <div v-if="type === 'A'">A</div>
+      <div v-else-if="type === 'B'">B</div>
+      <div v-else-if="type === 'C'">C</div>
+      <div v-else>Not A/B/C</div>
+    </div>
+
+    <!-- v-on -->
+    <div id="app5">
+      <p>■インラインイベントハンドラ</p>
+
+      <p>数値:{{ counter }}</p>
+      <button v-on:click="counter++">+1</button>
+    </div>
+
+    <div id="app6">
+      <p>■メソッドイベントハンドラ</p>
+      <p>メッセージ:{{ message }}</p>
+      <button v-on:click="viewMessage">messageを表示</button>
+    </div>
+
+    <!-- v-bind -->
+    <div id="app7">
+      <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }"></div>
+    </div>
+
+    <!-- v-show -->
+    <div id="app8">
+      <h1 v-show="ok">Hello!</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
